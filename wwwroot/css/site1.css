@@ -1,0 +1,141 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.validation-summary-errors {
+    border: 2px solid red;
+    color: red;
+    font-weight: bold;
+    margin: 6px;
+    width: 30%;
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+    background-color: yellow;
+}
+
+.input-validation-error {
+    color: red;
+    font-weight: bold;
+    background-color: pink;
+}
+.close-alert {
+    position: absolute;
+    right: -12px;
+    top: -15px;
+    border-radius: 15px;
+    width: 30px;
+    height: 31px;
+}
+
+body {
+    background-image: url('/images/Fundomod.png'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Ajustes para o cabeçalho */
+html, body {
+    height: 100%; /* Garante que o body ocupe toda a altura da tela */
+    margin: 0; /* Remove margens padrão */
+}
+
+main {
+    flex: 1; /* Isso faz com que o conteúdo principal ocupe o espaço disponível */
+    padding-bottom: 50px; /* Adiciona um espaço extra para o rodapé não cobrir conteúdo */
+}
+
+/* Ajustes para o cabeçalho */
+header {
+    height: 100px;
+    color: #1b6ec2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    color: white;
+    padding: 0;
+    text-align: center;
+    margin-top: 0; /* Adiciona um pouco de espaço entre o conteúdo e o rodapé */
+    height: 10px;
+}
+
+

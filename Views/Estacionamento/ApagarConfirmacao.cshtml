@@ -1,0 +1,12 @@
+﻿@model EstacionamentoModel
+@{
+    ViewData["Title"] = "Confirmação excluir veículo";
+}
+<div class="text-center">
+
+    <h3>Realmente deseja exluir o veículo(@Model.MarcaModelo)?</h3>
+    <h3>Veículo está deixando o estacionamento ?</h3>
+
+</div>
+<a class="btn btn-primary btn-block" role="button" asp-controller="Estacionamento" asp-action="Index">Cancelar exclusao</a>
+<a class="btn btn-danger btn-block" role="button" asp-controller="Estacionamento" asp-route-id="@Model.Id" asp-action="Apagar">Confirmar exclusao</a>

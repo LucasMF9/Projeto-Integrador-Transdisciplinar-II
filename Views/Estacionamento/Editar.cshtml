@@ -1,0 +1,47 @@
+﻿@model EstacionamentoModel
+@{
+    ViewData["Title"] = "Editar veículo";
+}
+<div class="text-center">
+
+    <h1>Editar Veículo</h1>
+
+</div>
+
+
+<form asp-controller="Estacionamento" asp-action="Editar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
+    <div class="mb-3">
+        <label for="nomeDoProprietário">Proprietário</label>
+        <input type="text" asp-for=NomeProprietario class="form-control" placeholder="Digite o nome do proprietário">
+        @Html.ValidationMessageFor(x => x.NomeProprietario)
+    </div>
+
+    <div class="mb-3">
+        <label for="marca/Modelo">Marca/Modelo</label>
+        <input type="text" asp-for=MarcaModelo class="form-control" placeholder="Digite a marca e o modelo do veículo">
+        @Html.ValidationMessageFor(x => x.MarcaModelo)
+    </div>
+
+    <div class="mb-3">
+        <label for="corDoVeiculo">Cor Do Veículo</label>
+        <input type="text" asp-for=Cor class="form-control" placeholder="Digite a cor do veículo">
+        @Html.ValidationMessageFor(x => x.Cor)
+    </div>
+
+    <div class="mb-3">
+        <label for="placaVeiculo">Placa</label>
+        <input type="text" asp-for=Placa class="form-control" placeholder="Digite a placa veículo">
+        @Html.ValidationMessageFor(x => x.Placa)
+    </div>
+
+    <div class="mb-3">
+        <label for="vaga">Vaga</label>
+        <input type="text" asp-for=Vaga class="form-control" placeholder="Digite a vaga que o veículo ocupará">
+        @Html.ValidationMessageFor(x => x.Vaga)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Alterar</button>
+    <a class="btn btn-secondary" asp-controller="Estacionamento" asp-action="Index" role="button">Voltar</a>
+</form>

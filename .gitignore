@@ -1,0 +1,15 @@
+# Arquivos do Visual Studio
+.vs/
+.vscode/
+bin/
+obj/
+
+# Arquivos de configuração do sistema
+Thumbs.db
+Desktop.ini
+
+# Arquivos de log
+*.log
+
+# Arquivos de dependências de pacotes
+node_modules/

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EstacionamentoModel>
+
+@{
+    ViewData["Title"] = "Pesquisa de Estacionamento";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Pesquisar" method="get">
+    <div class="form-group">
+        <label for="NomeProprietario">Nome Proprietário</label>
+        <input type="text" class="form-control" id="NomeProprietario" name="NomeProprietario" />
+    </div>
+
+    <div class="form-group">
+        <label for="MarcaModelo">Marca/Modelo</label>
+        <input type="text" class="form-control" id="MarcaModelo" name="MarcaModelo" />
+    </div>
+
+    <div class="form-group">
+        <label for="Placa">Placa</label>
+        <input type="text" class="form-control" id="Placa" name="Placa" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+    <a class="btn btn-secondary" asp-controller="Estacionamento" asp-action="Index" role="button">Voltar</a>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h3>Resultados da Pesquisa</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome Proprietário</th>
+                <th>Marca/Modelo</th>
+                <th>Cor</th>
+                <th>Placa</th>
+                <th>Vaga</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NomeProprietario</td>
+                    <td>@item.MarcaModelo</td>
+                    <td>@item.Cor</td>
+                    <td>@item.Placa</td>
+                    <td>@item.Vaga</td>
+                    <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a role="button" class="btn btn-warning" asp-route-id="@item.Id" asp-controller="Estacionamento" asp-action="Editar">Editar</a>
+                            <a role="button" class="btn btn-danger" asp-route-id="@item.Id" asp-controller="Estacionamento" asp-action="ApagarConfirmacao">Apagar</a>
+                        </div>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3 class="text-danger">Nenhum resultado encontrado.</h3>
+}

@@ -1,0 +1,75 @@
+﻿@model List<EstacionamentoModel>
+@{
+    ViewData["Title"] = "Veículos Estacionados";
+}
+<div class="text-center">
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Estacionamento" asp-action="Adicionar">Adicionar Veículo</a>
+    </div>
+
+    <br />
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a class="btn btn-primary" role="button" asp-controller="Estacionamento" asp-action="Pesquisar">Pesquisar Veículo</a>
+    </div>
+   
+  
+    <br />
+
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="CLose">x</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">x</button>
+            @TempData["MensagemErro"]
+        </div>
+    }
+
+    <br />
+
+    <h2>Lista de Veículos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Proprietário</th>
+                <th scope="col">Marca/Modelo</th>
+                <th scope="col">Cor Do Veículo</th>
+                <th scope="col">Placa</th>
+                <th scope="col">Vaga</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null && Model.Any())
+            {
+                foreach (EstacionamentoModel estacionamento in Model)
+                {
+                    <tr>
+                        <th scope="row">@estacionamento.Id</th>
+                        <td>@estacionamento.NomeProprietario</td>
+                        <td>@estacionamento.MarcaModelo</td>
+                        <td>@estacionamento.Cor</td>
+                        <td>@estacionamento.Placa</td>
+                        <td>@estacionamento.Vaga</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a role="button" class="btn btn-warning" asp-route-id="@estacionamento.Id" asp-controller="Estacionamento" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@estacionamento.Id" asp-controller="Estacionamento" asp-action="ApagarConfirmacao">Apagar</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
